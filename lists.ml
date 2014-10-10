@@ -1,3 +1,12 @@
+(******************************************************************************
+   Filename: lists.ml
+
+     Author: David C. Drake (http://davidcdrake.com), with initial assistance
+             provided by Dr. Russ Ross.
+
+Description: A collection of list-manipulating functions written in OCaml.
+******************************************************************************)
+
 open Core.Std
 
 let rec sumList a =
