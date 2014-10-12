@@ -43,7 +43,7 @@ let term_to_string t = tl_to_string [t]
 (******************************************************************************
   Converts a term into a new term formed by applying the function f to all the
   variables (but leaving all atoms and predicate names unaltered). This can be
-  used for applying a substitution to a term.
+  used to apply a substitution to a term.
 ******************************************************************************)
 let rec mapVariable f  = function
     (Atom x) -> Atom(x)
@@ -51,8 +51,8 @@ let rec mapVariable f  = function
   | (Compound(n, terms)) -> Compound(n, map ~f:(mapVariable f) terms)
 
 (******************************************************************************
-  Create a substitution function that can be applied to a term. Takes a
-  variable name and a term, and returns a function that can be used to apply
+  Creates a substitution function that can be applied to a term. Takes a
+  variable name and a term and returns a function that can be used to apply
   that substitution to any term.
 ******************************************************************************)
 let sub name term =
@@ -88,7 +88,6 @@ let mgu (a, b) =
   in
     ut ([a],[b], (fun x -> x))
 
-
 (******************************************************************************
   function resolution(clause, goals):
       let sub = the MGU of head(clause) and head(goals)
@@ -96,7 +95,9 @@ let mgu (a, b) =
 
   val resolution : term list -> term list -> term list = <fun>
 ******************************************************************************)
-let resolution clause goals = []
+let resolution clause goals =
+  let sub = mgu (head clause) (head goals)
+  -> sub (tail clause) @ (tail goals)
 
 (******************************************************************************
   function solve(goals)
@@ -107,13 +108,14 @@ let resolution clause goals = []
 
   val solve : term list list -> term list -> bool list = <fun>
 ******************************************************************************)
-let solve program goals = []
+let solve program goals =
+  if goals=[] then -> [true]
+  else
 
 (******************************************************************************
   val prolog : term list list -> term -> bool list = <fun>
 ******************************************************************************)
 let prolog program query = []
-
 
 (******************************************************************************
   Challenge problem number one. A program with four clauses and a query. This
