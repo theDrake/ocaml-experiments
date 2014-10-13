@@ -2,7 +2,7 @@
    Filename: prolog_interpreter.ml
 
      Author: David C. Drake (http://davidcdrake.com), with initial assistance
-             provided by Dr. Russ Ross (http://cit.dixie.edu/faculty/ross.php).
+             from Dr. Russ Ross (http://cit.dixie.edu/faculty/ross.php)
 
 Description: A simple Prolog interpreter written in OCaml.
 ******************************************************************************)

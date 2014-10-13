@@ -2,7 +2,7 @@
    Filename: lists.ml
 
      Author: David C. Drake (http://davidcdrake.com), with initial assistance
-             provided by Dr. Russ Ross.
+             from Dr. Russ Ross (http://cit.dixie.edu/faculty/ross.php)
 
 Description: A collection of list-manipulating functions written in OCaml.
 ******************************************************************************)

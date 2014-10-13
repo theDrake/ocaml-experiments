@@ -12,3 +12,10 @@ let average a b =
 
 prompt_string ("Name: ")
 
+let rec union a = function
+  | [] -> a
+  | x::xs -> union (if member x a then a else x::a) xs;
+
+let rec eval x = function
+  | [] -> 0.0
+  | c::cs -> c +. x *. eval x cs;
