@@ -16,6 +16,14 @@ let (++) f g x = f (g x)
 let map        = List.map
 let length     = List.length
 
+let head = function
+  | []   -> []
+  | x::_ -> x
+
+let tail = function
+  | []   -> []
+  | _::x -> x
+
 (******************************************************************************
   A Prolog term can be an Atom, a Variable, or a Compound term. All lexemes are
   represented using strings.
@@ -96,8 +104,8 @@ let mgu (a, b) =
   val resolution : term list -> term list -> term list = <fun>
 ******************************************************************************)
 let resolution clause goals =
-  let sub = mgu (head clause) (head goals)
-  -> sub (tail clause) @ (tail goals)
+  let sub = mgu (head clause, head goals) in
+  sub (tail clause) @ (tail goals)
 
 (******************************************************************************
   function solve(goals)
@@ -109,8 +117,7 @@ let resolution clause goals =
   val solve : term list list -> term list -> bool list = <fun>
 ******************************************************************************)
 let solve program goals =
-  if goals=[] then -> [true]
-  else
+  if goals=[] then [true]
 
 (******************************************************************************
   val prolog : term list list -> term -> bool list = <fun>
