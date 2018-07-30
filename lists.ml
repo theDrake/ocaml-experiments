@@ -1,11 +1,10 @@
-(******************************************************************************
+(*******************************************************************************
    Filename: lists.ml
 
-     Author: David C. Drake (http://davidcdrake.com), with initial assistance
-             from Dr. Russ Ross (http://cit.dixie.edu/faculty/ross.php)
+     Author: David C. Drake (https://davidcdrake.com)
 
 Description: A collection of list-manipulating functions written in OCaml.
-******************************************************************************)
+*******************************************************************************)
 
 open Core.Std
 

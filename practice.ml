@@ -1,11 +1,11 @@
-(******************************************************************************
+(*******************************************************************************
    Filename: practice.ml
 
-     Author: David C. Drake (http://davidcdrake.com)
+     Author: David C. Drake (https://davidcdrake.com)
 
 Description: A practice file for experimenting with the OCaml programming
              language.
-******************************************************************************)
+*******************************************************************************)
 
 let average a b =
   (a +. b) /. 2.0
